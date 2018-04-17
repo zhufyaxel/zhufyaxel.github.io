@@ -16,8 +16,8 @@
 title: FY's DevLogs
 email: zhufyaxel@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  This is a personal blog for FY zhu to make logs for his personal development work, and also the space to write some articles
-  If you want to check his portfolio projects, please check [itpzhufy.com](http://itpzhufy.com)
+  This is a personal blog for Fengyuan Zhu to make logs for his personal development work, and also the space to write some articles
+  If you want to check his portfolio projects, please check itpzhufy.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: zhufyaxel
