@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "CSharp_04_08.md"
-date:   2018-04-17 18:19:09 +0800
-categories: Unity
+title:  "CSharp_04_08"
+date:   2018-04-18 18:19:09 +0800
+categories: Selflearning Unity
 ---
 ## 20180408
 ## Most things are related to the C# instance today
