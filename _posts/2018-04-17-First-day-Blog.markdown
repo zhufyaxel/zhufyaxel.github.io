@@ -2,10 +2,12 @@
 layout: post
 title:  "建站感言"
 date:   2018-04-17 17:19:09 +0800
-categories: Random
+tags: [Random]
+feature-img: "assets/img/pexels/desk-messy.jpeg"
+thumbnail: "assets/img/thumbnails/desk-messy.jpeg"
 ---
 ## 为啥要做这个站
-前后花了两个小时，终于把这个Blog给set up好了。有时候不得不感慨美国纵有万般不是，至少建设Cyberspace的这批人还是好人居多。各种基建（Github Page，Project Fi, etc）这类玩意还是用得舒服。国内的墙在把关意识形态的同时，无意识地把一些基础建设挡在外面，不得不说是一个遗憾事。
+前后折腾了极天，终于把这个Blog给set up好了。有时候不得不感慨美国纵有万般不是，至少建设Cyberspace的这批人还是好人居多。各种基建（Github Page，Project Fi, etc）这类玩意还是用得舒服。国内的墙在把关意识形态的同时，无意识地把一些基础建设挡在外面，不得不说是一个遗憾事。
 
 早先其实我也有记开发日志的习惯。但随着老网站[itpzhufy](http://itpzhufy.com)越来越面向商务（丢给学校，丢给合作伙伴，丢给大公司），只能把它当作一个Portfolio，而越来越不方便记载开发日志（或者像这样随便写上几句废话）。同时已有的WordPress架构其实并不适合做一些代码实例（例如下面这个）
 
@@ -31,6 +33,6 @@ public class Friend : MonoBehavior{
 * 杂七杂八的文章日志
 * 日常开发日志
 
-大部分的开发日志我应该会用英语写，零零碎碎的废话就会和这篇文章相同。
+记录语言应该大部分会直接中文吧。不过视情况而定会用英文记一些。尤其如果需要和工作伙伴分享进度的情况下，会用英文记录具体开发进度。过段时间可能也会研究一下直接机翻怎么搞。
 
 If you don't know Chinese but want to see what am I writen here, please use the `translate` function from Google. Many thanks
