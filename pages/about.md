@@ -17,4 +17,4 @@ As for my portfolio, please check [itpzhufy.com](http://itpzhufy.com)
   * 2015.06 - 2017.05 Master Candidate in Interactive Telecommuncations Program, NYU
   * 2014.04 - 2015.06 Research Intern in x-studio, Tsinghua University. [link](http://www.x-studio.org.cn/)
   * 2011.09 - 2015.06 Undergrade Candidate in School of Physics, Peking University
-  * 2012.09 - 2015.06 Minor degree in School of Arts, Peking University
+  * 2012.09 - 2015.06 Undergrade Candidate in School of Arts, Peking University, as a second major
