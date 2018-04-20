@@ -5,7 +5,7 @@ permalink: /about/
 feature-img: "assets/img/pexels/circuit.jpeg"
 tags: [About]
 ---
-Thank you for coming to this website. Usually this should be just used by myself but if you come, feel free to have a look.
+Thank you for coming to this website. Usually this site should be just used by myself but if you come, feel free to have a look.
 As for my portfolio, please check [itpzhufy.com](http://itpzhufy.com)
 
 ![Cheers!](../assets/img/me.jpg "This is me")
