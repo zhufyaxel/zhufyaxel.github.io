@@ -102,9 +102,6 @@ defaults:
       tags: [Selflearning, Unity]
       feature-img: "assets/img/CommonUsage/unity.jpg"
       thumbnail: "assets/img/CommonUsage/unity.jpg"
-      {% if page.unity_dir %}
-        {% include page__unity.html %}
-      {% endif %}
   -
     scope:
       path:  "_posts/Others"
