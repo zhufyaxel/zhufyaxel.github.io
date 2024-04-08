@@ -1,5 +1,9 @@
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hello! I'm Fengyuan Zhu, a PhD candidate in Computer Science at the University of Toronto, focusing on spatial computing. I'm working with Prof. <a href="https://www.tovigrossman.com/" target="_blank" rel="noopener noreferrer">Tovi Grossman</a> at the <a href="https://www.dgp.toronto.edu/" target="_blank" rel="noopener noreferrer">Dynamic Graphics Project Lab</a>.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My doctoral research is motivated by a vision to transcend traditional 2D screen interactions and delve into the realm of three-dimensional space. This journey is twofold: firstly, I am exploring the integration of smart devices with VR and AR to enrich digital experiences. Secondly, I am focused on enhancing input precision in VR and AR environments to facilitate more natural and intuitive interactions.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+The emergence of Large Models has recently shifted part of my research, and I am excited about the potential of combining sensory perception and content generation in three-dimensional spaces with LMs. Some of my works in this exciting new field will soon be published on arXiv and shared with you, so keep an eye out!
+
+Before this, at NYU's Interactive Telecommunications Program (ITP), I led the <a href="https://1.holokit.io/" target="_blank" rel="noopener noreferrer">Holokit</a> open-source project, achieving significant impact.
+
+I hold a Bachelor's in Physics from Peking University with a minor in Art, a background that drives my approach to human-computer interaction and creative projects.
