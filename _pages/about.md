@@ -12,7 +12,7 @@ profile:
     <p>📧  fyzhu@dgp.toronto.edu</p>
     <p>🎓 <a href="https://scholar.google.ca/citations?user=w88gFWAAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></p>
     <p>🎨 <a href="http://itpzhufy.com" target="_blank" rel="noopener noreferrer">Art Website</a>
-  
+
 news: false # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
