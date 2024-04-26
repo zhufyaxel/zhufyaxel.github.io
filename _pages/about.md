@@ -1,21 +1,21 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-#subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: #<a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 
 profile:
   align: right
-  image: Head.jpeg
+  image: Head.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>📧  fyzhu@dgp.toronto.edu</p>
     <p>🎓 <a href="https://scholar.google.ca/citations?user=w88gFWAAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></p>
     <p>🎨 <a href="http://itpzhufy.com" target="_blank" rel="noopener noreferrer">Art Website</a>
   
-#news: true # includes a list of news items
+news: false # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
-#social: true # includes social icons at the bottom of the page
+social: true # includes social icons at the bottom of the page
 ---
 
 Hello! I'm Fengyuan Zhu, a PhD candidate in Computer Science at the University of Toronto, focusing on spatial computing. I'm working with Prof. <a href="https://www.tovigrossman.com/" target="_blank" rel="noopener noreferrer">Tovi Grossman</a> at the <a href="https://www.dgp.toronto.edu/" target="_blank" rel="noopener noreferrer">Dynamic Graphics Project Lab</a>.
