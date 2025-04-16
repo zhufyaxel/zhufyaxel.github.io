@@ -1,8 +1,8 @@
 ---
 ---
-<div class="row">
+<div class="row publication-entry">
   {% if site.enable_publication_thumbnails %}
-    <div class="col-sm-4 abbr">
+    <div class="col-sm-4 col-md-4 abbr">
       {%- if entry.abbr -%}
         {%- if site.data.venues[entry.abbr] -%}
           {% assign venue_style = null %}
@@ -57,9 +57,69 @@
   {% endif %}
 
   <!-- Entry bib key -->
-  <div id="{{entry.key}}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
+  <div id="{{entry.key}}" class="{% if site.enable_publication_thumbnails %}col-sm-8 col-md-8{% else %}col-sm-10{% endif %} publication-content">
     <!-- Title -->
-    <div class="title">{{ entry.title }}</div>
+    <div class="title">
+      {{ entry.title }}
+      
+      {% if site.enable_publication_badges %}
+        {% assign entry_has_altmetric_badge = entry.altmetric or entry.doi or entry.eprint or entry.pmid or entry.isbn %}
+        {% assign entry_has_dimensions_badge = entry.dimensions or entry.doi or entry.pmid %}
+        {% assign entry_has_google_scholar_badge = entry.google_scholar_id %}
+        {% if entry_has_altmetric_badge or entry_has_dimensions_badge or entry_has_google_scholar_badge %}
+          <div class="badges">
+            {% if site.enable_publication_badges.altmetric and entry_has_altmetric_badge %}
+              <span
+                class="altmetric-embed"
+                data-hide-no-mentions="true"
+                data-hide-less-than="15"
+                data-badge-type="2"
+                data-badge-popover="right"
+                {% if entry.eprint %}
+                  data-arxiv-id="{{ entry.eprint }}"
+                {% elsif entry.doi %}
+                  data-doi="{{ entry.doi }}"
+                {% elsif entry.altmetric %}
+                  data-altmetric-id="{{ entry.altmetric }}"
+                {% elsif entry.pmid %}
+                  data-pmid="{{ entry.pmid }}"
+                {% elsif entry.isbn %}
+                  data-isbn="{{ entry.isbn }}"
+                {% endif %}
+              ></span>
+            {% endif %}
+            {% if site.enable_publication_badges.dimensions and entry_has_dimensions_badge %}
+              <span
+                class="__dimensions_badge_embed__"
+                {% if entry.doi %}
+                  data-doi="{{ entry.doi }}"
+                {% else %}
+                  data-pmid="{{ entry.pmid }}"
+                {% else %}
+                  data-id="{{ entry.dimensions }}"
+                {% endif %}
+                data-hide-zero-citations="true"
+                data-style="small_rectangle"
+                data-legend="hover-right"
+                style="margin-bottom: 3px;"
+              ></span>
+            {% endif %}
+            {% if site.enable_publication_badges.google_scholar and entry_has_google_scholar_badge %}
+              <a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ site.scholar_userid }}&citation_for_view={{ site.scholar_userid }}:{{ entry.google_scholar_id }}"
+                aria-label="Google Scholar link"
+                role="button"
+              >
+                <img
+                  src="https://img.shields.io/badge/scholar-{% google_scholar_citations site.scholar_userid entry.google_scholar_id %}-4285F4?logo=googlescholar&labelColor=beige"
+                  alt="{% google_scholar_citations site.scholar_userid entry.google_scholar_id %} Google Scholar citations"
+                >
+              </a>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
     <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
@@ -178,9 +238,11 @@
     <div class="periodical">
       {{ periodical | strip }}
     </div>
+    {% if entry.note and entry.note != "" %}
     <div class="periodical">
       {{ entry.note | strip }}
     </div>
+    {% endif %}
 
     <!-- Links/Buttons -->
     <div class="links">
@@ -248,63 +310,6 @@
         <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
       {% endif %}
     </div>
-    {% if site.enable_publication_badges %}
-      {% assign entry_has_altmetric_badge = entry.altmetric or entry.doi or  entry.eprint or entry.pmid or entry.isbn %}
-      {% assign entry_has_dimensions_badge = entry.dimensions or entry.doi or entry.pmid %}
-      {% assign entry_has_google_scholar_badge = entry.google_scholar_id %}
-      {% if entry_has_altmetric_badge or entry_has_dimensions_badge or entry_has_google_scholar_badge %}
-        <div class="badges">
-          {% if site.enable_publication_badges.altmetric and entry_has_altmetric_badge %}
-            <span
-              class="altmetric-embed"
-              data-hide-no-mentions="true"
-              data-hide-less-than="15"
-              data-badge-type="2"
-              data-badge-popover="right"
-              {% if entry.eprint %}
-                data-arxiv-id="{{ entry.eprint }}"
-              {% elsif entry.doi %}
-                data-doi="{{ entry.doi }}"
-              {% elsif entry.altmetric %}
-                data-altmetric-id="{{ entry.altmetric }}"
-              {% elsif entry.pmid %}
-                data-pmid="{{ entry.pmid }}"
-              {% elsif entry.isbn %}
-                data-isbn="{{ entry.isbn }}"
-              {% endif %}
-            ></span>
-          {% endif %}
-          {% if site.enable_publication_badges.dimensions and entry_has_dimensions_badge %}
-            <span
-              class="__dimensions_badge_embed__"
-              {% if entry.doi %}
-                data-doi="{{ entry.doi }}"
-              {% else %}
-                data-pmid="{{ entry.pmid }}"
-              {% else %}
-                data-id="{{ entry.dimensions }}"
-              {% endif %}
-              data-hide-zero-citations="true"
-              data-style="small_rectangle"
-              data-legend="hover-right"
-              style="margin-bottom: 3px;"
-            ></span>
-          {% endif %}
-          {% if site.enable_publication_badges.google_scholar and entry_has_google_scholar_badge %}
-            <a
-              href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ site.scholar_userid }}&citation_for_view={{ site.scholar_userid }}:{{ entry.google_scholar_id }}"
-              aria-label="Google Scholar link"
-              role="button"
-            >
-              <img
-                src="https://img.shields.io/badge/scholar-{% google_scholar_citations site.scholar_userid entry.google_scholar_id %}-4285F4?logo=googlescholar&labelColor=beige"
-                alt="{% google_scholar_citations site.scholar_userid entry.google_scholar_id %} Google Scholar citations"
-              >
-            </a>
-          {% endif %}
-        </div>
-      {% endif %}
-    {% endif %}
 
     {% if entry.award %}
       <!-- Hidden Award block -->

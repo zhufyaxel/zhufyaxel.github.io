@@ -665,7 +665,7 @@ footer.sticky-bottom {
     border-top: 1px solid var(--global-divider-color);
     padding-top: 1rem;
     margin-top: 2rem;
-    margin-bottom: -2rem;
+    margin-bottom: 0;
     text-align: right;
   }
 
@@ -675,16 +675,27 @@ footer.sticky-bottom {
     margin-top: 0;
 
     li {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem; /* Moderate spacing between entries */
+      padding-bottom: 0; /* Remove padding */
+      border-bottom: none; /* Remove borders */
 
       .preview {
         width: 100%;
         min-width: 80px;
         max-width: 500px;
       }
+      
+      /* Ensure badges don't affect spacing */
+      .badges {
+        height: auto;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+      }
 
       .abbr {
-        height: 2rem;
+        height: auto;
         margin-bottom: 0.5rem;
 
         abbr {
@@ -710,6 +721,10 @@ footer.sticky-bottom {
 
       .title {
         font-weight: bolder;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
       }
 
       .author {
@@ -739,6 +754,12 @@ footer.sticky-bottom {
         }
       }
 
+      /* Ensure consistent height for periodical sections */
+      .periodical {
+        min-height: 1.5em;
+        margin-bottom: 0.25rem;
+      }
+
       .links {
         a.btn {
           color: var(--global-text-color);
@@ -748,6 +769,7 @@ footer.sticky-bottom {
           padding-top: 0.25rem;
           padding-bottom: 0.25rem;
           margin-left: 0;
+          margin-bottom: 0.25rem;
 
           &:hover {
             color: var(--global-theme-color);
@@ -760,17 +782,29 @@ footer.sticky-bottom {
       }
 
       .badges {
-        padding-bottom: 0.5rem;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        height: auto;
+        line-height: 1;
+        
         span {
           display: inline-block;
           color: $black-color;
-          height: 100%;
+          height: auto;
           padding-right: 0.5rem;
           vertical-align: middle;
+          margin: 0;
 
           &:hover {
             text-decoration: underline;
           }
+        }
+        
+        /* Fix for citation badges */
+        img {
+          vertical-align: middle;
+          margin: 0;
+          padding: 0;
         }
       }
 
@@ -819,6 +853,39 @@ footer.sticky-bottom {
     }
     div.award.hidden.open {
       border-color: var(--global-highlight-color);
+    }
+  }
+}
+
+/* Responsive adjustments for publications */
+@media (max-width: 768px) {
+  .publications {
+    ol.bibliography {
+      li {
+        /* Stack items vertically on small screens */
+        .row {
+          display: flex;
+          flex-direction: column;
+        }
+        
+        /* Make preview and content take full width */
+        .col-sm-4, .col-sm-8 {
+          width: 100%;
+          max-width: 100%;
+          flex: 0 0 100%;
+        }
+        
+        /* Add space between preview and content */
+        .abbr {
+          margin-bottom: 1rem;
+        }
+        
+        /* Ensure preview is not too large */
+        .preview {
+          max-width: 100%;
+          height: auto;
+        }
+      }
     }
   }
 }
