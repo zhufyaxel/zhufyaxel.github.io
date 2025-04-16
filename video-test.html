@@ -1,115 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Video Playback Test</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .test-container {
-            margin-bottom: 30px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        video {
-            max-width: 100%;
-            border-radius: 4px;
-        }
-        .video-container {
-            position: relative;
-            width: 100%;
-            cursor: pointer;
-        }
-        .notes {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #666;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .test-container {
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      h1,
+      h2 {
+        color: #333;
+      }
+      video {
+        max-width: 100%;
+        border-radius: 4px;
+      }
+      .video-container {
+        position: relative;
+        width: 100%;
+        cursor: pointer;
+      }
+      .notes {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #666;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Video Playback Test Page</h1>
     <p>This page tests different video configurations to help diagnose playback issues in Docker.</p>
 
     <div class="test-container">
-        <h2>Test 1: Basic Video Tag</h2>
-        <video src="/assets/video/publication_preview/BeyondThePhone.mp4" width="100%" controls></video>
-        <div class="notes">
-            This is a basic video tag with controls. If this works but others don't, the issue might be with autoplay or other attributes.
-        </div>
+      <h2>Test 1: Basic Video Tag</h2>
+      <video src="/assets/video/publication_preview/BeyondThePhone.mp4" width="100%" controls></video>
+      <div class="notes">
+        This is a basic video tag with controls. If this works but others don't, the issue might be with autoplay or other attributes.
+      </div>
     </div>
 
     <div class="test-container">
-        <h2>Test 2: Video with Type Attribute</h2>
-        <video src="/assets/video/publication_preview/BeyondThePhone.mp4" width="100%" controls type="video/mp4"></video>
-        <div class="notes">
-            This video has an explicit type="video/mp4" attribute which can help with MIME type issues.
-        </div>
+      <h2>Test 2: Video with Type Attribute</h2>
+      <video src="/assets/video/publication_preview/BeyondThePhone.mp4" width="100%" controls type="video/mp4"></video>
+      <div class="notes">This video has an explicit type="video/mp4" attribute which can help with MIME type issues.</div>
     </div>
 
     <div class="test-container">
-        <h2>Test 3: Video with Autoplay, Muted, Loop</h2>
-        <video src="/assets/video/publication_preview/BeyondThePhone.mp4" width="100%" autoplay muted loop playsinline></video>
-        <div class="notes">
-            This matches the configuration used in your publication previews.
-        </div>
+      <h2>Test 3: Video with Autoplay, Muted, Loop</h2>
+      <video src="/assets/video/publication_preview/BeyondThePhone.mp4" width="100%" autoplay muted loop playsinline></video>
+      <div class="notes">This matches the configuration used in your publication previews.</div>
     </div>
 
     <div class="test-container">
-        <h2>Test 4: Video with Source Element</h2>
-        <video width="100%" controls>
-            <source src="/assets/video/publication_preview/BeyondThePhone.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="notes">
-            Using a source element inside the video tag can sometimes resolve compatibility issues.
-        </div>
+      <h2>Test 4: Video with Source Element</h2>
+      <video width="100%" controls>
+        <source src="/assets/video/publication_preview/BeyondThePhone.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="notes">Using a source element inside the video tag can sometimes resolve compatibility issues.</div>
     </div>
 
     <div class="test-container">
-        <h2>Test 5: Video with Absolute URL</h2>
-        <video width="100%" controls>
-            <source src="https://zhufyaxel.github.io/assets/video/publication_preview/BeyondThePhone.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="notes">
-            Using an absolute URL can help diagnose if the issue is with path resolution.
-        </div>
+      <h2>Test 5: Video with Absolute URL</h2>
+      <video width="100%" controls>
+        <source src="https://zhufyaxel.github.io/assets/video/publication_preview/BeyondThePhone.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="notes">Using an absolute URL can help diagnose if the issue is with path resolution.</div>
     </div>
 
     <div class="test-container">
-        <h2>Test 6: Video with Preload Attribute</h2>
-        <video src="/assets/video/publication_preview/BeyondThePhone.mp4" width="100%" controls preload="auto"></video>
-        <div class="notes">
-            The preload="auto" attribute tells the browser to load the video immediately.
-        </div>
+      <h2>Test 6: Video with Preload Attribute</h2>
+      <video src="/assets/video/publication_preview/BeyondThePhone.mp4" width="100%" controls preload="auto"></video>
+      <div class="notes">The preload="auto" attribute tells the browser to load the video immediately.</div>
     </div>
 
     <script>
-        // Log any video errors to help with debugging
-        document.addEventListener('DOMContentLoaded', function() {
-            const videos = document.querySelectorAll('video');
-            videos.forEach((video, index) => {
-                video.addEventListener('error', function(e) {
-                    console.error(`Video ${index + 1} error:`, e);
-                    console.error('Error code:', video.error ? video.error.code : 'unknown');
-                    console.error('Error message:', video.error ? video.error.message : 'unknown');
-                });
-                
-                video.addEventListener('loadeddata', function() {
-                    console.log(`Video ${index + 1} loaded successfully`);
-                });
-            });
+      // Log any video errors to help with debugging
+      document.addEventListener("DOMContentLoaded", function () {
+        const videos = document.querySelectorAll("video");
+        videos.forEach((video, index) => {
+          video.addEventListener("error", function (e) {
+            console.error(`Video ${index + 1} error:`, e);
+            console.error("Error code:", video.error ? video.error.code : "unknown");
+            console.error("Error message:", video.error ? video.error.message : "unknown");
+          });
+
+          video.addEventListener("loadeddata", function () {
+            console.log(`Video ${index + 1} loaded successfully`);
+          });
         });
+      });
     </script>
-</body>
+  </body>
 </html>
