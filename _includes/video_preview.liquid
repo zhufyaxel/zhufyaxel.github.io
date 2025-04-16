@@ -1,5 +1,11 @@
 <figure>
-  <div class="video-container" {% if include.zoomable %}data-zoomable{% endif %} data-video-path="{{ include.path | relative_url }}">
+  <div
+    class="video-container"
+    {% if include.zoomable %}
+      data-zoomable
+    {% endif %}
+    data-video-path="{{ include.path | relative_url }}"
+  >
     <!-- Primary video element with multiple source formats -->
     <video
       {% if include.class %}
@@ -22,19 +28,19 @@
     >
       <!-- Try MP4 format first -->
       <source src="{{ include.path | relative_url }}" type="video/mp4">
-      
+
       <!-- Fallback to WebM format if available -->
       <source src="{{ include.path | replace: '.mp4', '.webm' | relative_url }}" type="video/webm">
-      
+
       <!-- Fallback message if video can't be played -->
       Your browser does not support the video tag.
     </video>
-    
+
     <!-- Overlay play button to indicate it's clickable -->
     <div class="video-play-overlay">
       <div class="play-button-large"></div>
     </div>
-    
+
     <!-- Fallback image that will be shown if video fails to load -->
     <div id="fallback-{{ include.path | slugify }}" class="video-fallback" style="display:none;" data-video-path="{{ include.path | relative_url }}">
       <img
@@ -56,19 +62,21 @@
     cursor: pointer;
     overflow: hidden;
     border-radius: 4px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
-  
+
   .video-container:hover {
     transform: scale(1.01);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
+
   .video-container video {
     display: block;
     max-width: 100%;
   }
-  
+
   .video-play-overlay {
     position: absolute;
     top: 0;
@@ -82,24 +90,24 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .video-container:hover .video-play-overlay {
     opacity: 1;
   }
-  
+
   .video-fallback {
     position: relative;
     width: 100%;
     cursor: pointer;
   }
-  
+
   .video-fallback img {
     width: 100%;
     height: auto;
     display: block;
     border-radius: 4px;
   }
-  
+
   .play-button-large {
     width: 80px;
     height: 80px;
@@ -108,9 +116,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
   }
-  
+
   .play-button-large:before {
     content: '';
     display: block;
@@ -121,7 +131,7 @@
     border-left: 25px solid white;
     margin-left: 5px;
   }
-  
+
   .video-container:hover .play-button-large,
   .video-fallback:hover .play-button-large {
     background-color: rgba(0, 0, 0, 0.8);

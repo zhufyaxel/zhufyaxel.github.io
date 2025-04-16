@@ -684,7 +684,7 @@ footer.sticky-bottom {
         min-width: 80px;
         max-width: 500px;
       }
-      
+
       /* Ensure badges don't affect spacing */
       .badges {
         height: auto;
@@ -786,7 +786,7 @@ footer.sticky-bottom {
         margin-bottom: 0;
         height: auto;
         line-height: 1;
-        
+
         span {
           display: inline-block;
           color: $black-color;
@@ -799,7 +799,7 @@ footer.sticky-bottom {
             text-decoration: underline;
           }
         }
-        
+
         /* Fix for citation badges */
         img {
           vertical-align: middle;
@@ -867,19 +867,20 @@ footer.sticky-bottom {
           display: flex;
           flex-direction: column;
         }
-        
+
         /* Make preview and content take full width */
-        .col-sm-4, .col-sm-8 {
+        .col-sm-4,
+        .col-sm-8 {
           width: 100%;
           max-width: 100%;
           flex: 0 0 100%;
         }
-        
+
         /* Add space between preview and content */
         .abbr {
           margin-bottom: 1rem;
         }
-        
+
         /* Ensure preview is not too large */
         .preview {
           max-width: 100%;

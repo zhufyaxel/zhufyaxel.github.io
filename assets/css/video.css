@@ -7,7 +7,9 @@
   cursor: pointer;
   overflow: hidden;
   border-radius: 4px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .video-container:hover {
@@ -41,7 +43,9 @@ video {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 
 #floating-video-overlay.visible {
@@ -83,7 +87,9 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 #close-floating-video:hover {
@@ -100,12 +106,14 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .play-button-large:before {
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 0;
@@ -172,17 +180,17 @@ video {
   #floating-video-container {
     width: 95%;
   }
-  
+
   #close-floating-video {
     top: -30px;
     right: 0;
   }
-  
+
   .play-button-large {
     width: 60px;
     height: 60px;
   }
-  
+
   .play-button-large:before {
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
