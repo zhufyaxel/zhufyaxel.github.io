@@ -70,7 +70,7 @@ docker-compose up -d
 
 ### 4. Test Video Playback
 
-Visit http://localhost:8080/video-test.html to test different video configurations.
+Visit `./video-test.html` (accessible at http://localhost:8080/video-test.html when running locally) to test different video configurations.
 
 ## Troubleshooting
 
