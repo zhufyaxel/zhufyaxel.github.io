@@ -1,0 +1,71 @@
+{
+  "files.exclude": {
+    // 隐藏系统文件
+    "**/.git": true,
+    "**/.DS_Store": true,
+
+    // 隐藏配置文件
+    //"*.yml": true,
+    "*.yaml": true,
+    "*.json": true,
+    "*.js": true,
+    "*.sh": true,
+    "*.lock": true,
+    "*.scss": true,
+    "*.html": true,
+    "*.rb": true,
+    "*.txt": true,
+    "*.conf": true,
+    "*.css": true,
+    "Dockerfile": true,
+    "Gemfile": true,
+    "LICENSE": true,
+    "package-lock.json": true,
+    "package.json": true,
+
+    // 隐藏隐藏文件
+    ".all-contributorsrc": true,
+    ".dockerignore": true,
+    ".git-blame-ignore-revs": true,
+    ".gitignore": true,
+    ".pre-commit-config.yaml": true,
+    ".prettierignore": true,
+    ".prettierrc": true,
+
+    // 隐藏非写作相关的文件夹
+    "_bibliography": true,
+    "_data": true,
+    "_docker": true,
+    "_includes": true,
+    "_layouts": true,
+    "_plugins": true,
+    "_sass": true,
+    "_site": true,
+    "assets": true,
+    "bin": true,
+    "lighthouse_results": true,
+    "node_modules": true,
+    "readme_preview": true,
+    ".devcontainer": true,
+    ".github": true,
+    ".husky": true,
+    ".jekyll-cache": true,
+    ".tweet-cache": true,
+    //"useless": true,
+    // 不隐藏.vscode文件夹
+    ".vscode": false,
+    ".vscode/settings.json": false,
+
+    // 不隐藏写作相关的文件夹
+    "_posts": false,
+    "_pages": false,
+    "_projects": false,
+    "_news": false,
+
+    // 不隐藏特定文件
+    "_config.yml": false,
+    "README.md": false,
+    "INSTALL.md": false,
+    "VIDEO_FIX_README.md": false
+  }
+}
