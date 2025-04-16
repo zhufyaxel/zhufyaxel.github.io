@@ -5,9 +5,19 @@ services:
     image: amirpourmand/al-folio:latest
     build: .
     ports:
-      - 8080:8080
       - 35729:35729
     volumes:
       - .:/srv/jekyll
     environment:
       - JEKYLL_ENV=development
+    command: jekyll serve --watch --port=8080 --host=0.0.0.0 --livereload --verbose --trace --force_polling
+  
+  nginx:
+    image: nginx:alpine
+    ports:
+      - 8080:80
+    volumes:
+      - .:/srv/jekyll
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - jekyll
