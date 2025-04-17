@@ -12,7 +12,7 @@ other_languages:
 
 # Enhancing Publications with Video Previews
 
-In this for, I have added the feature of rendering video previews to your selected papers. This creates an engaging and dynamic way to showcase your research at a glance.
+In this fork, I have added the feature of rendering video previews to your selected papers. This creates an engaging and dynamic way to showcase your research at a glance.
 
 ## How Video Previews Work
 
