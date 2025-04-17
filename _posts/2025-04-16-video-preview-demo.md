@@ -12,7 +12,7 @@ other_languages:
 
 # Enhancing Publications with Video Previews
 
-One of the most powerful features of this academic website template is the ability to add video previews to your selected papers. This creates an engaging and dynamic way to showcase your research at a glance.
+In this for, I have added the feature of rendering video previews to your selected papers. This creates an engaging and dynamic way to showcase your research at a glance.
 
 ## How Video Previews Work
 
