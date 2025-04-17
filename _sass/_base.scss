@@ -1188,3 +1188,32 @@ swiper-container {
     border-bottom: 2px solid var(--global-text-color);
   }
 }
+
+// Language Switcher
+.language-switcher {
+  margin: 0.5rem 0 1rem;
+  font-size: 0.9rem;
+
+  .lang-item {
+    display: inline-block;
+    padding: 0.2rem 0.4rem;
+
+    &.active {
+      font-weight: bold;
+      color: var(--global-theme-color);
+    }
+  }
+
+  .lang-separator {
+    color: var(--global-text-color);
+    opacity: 0.7;
+  }
+
+  a.lang-item {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

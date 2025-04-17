@@ -1,0 +1,33 @@
+{% if page.lang %}
+  {% assign page_lang = page.lang %}
+{% else %}
+  {% assign page_lang = site.lang | default: 'en' %}
+{% endif %}
+
+{% if page.other_languages %}
+  <div class="language-switcher">
+    <span>Language: </span>
+    {% for lang_item in page.other_languages %}
+      {% assign lang_code = lang_item[0] %}
+      {% assign lang_url = lang_item[1] %}
+
+      {% if lang_code == 'en' %}
+        {% assign lang_name = 'EN' %}
+      {% elsif lang_code == 'zh' %}
+        {% assign lang_name = '中文' %}
+      {% else %}
+        {% assign lang_name = lang_code | upcase %}
+      {% endif %}
+
+      {% if lang_code == page_lang %}
+        <span class="lang-item active">{{ lang_name }}</span>
+      {% else %}
+        <a href="{{ lang_url | relative_url }}" class="lang-item">{{ lang_name }}</a>
+      {% endif %}
+
+      {% unless forloop.last %}
+        <span class="lang-separator"> / </span>
+      {% endunless %}
+    {% endfor %}
+  </div>
+{% endif %}
